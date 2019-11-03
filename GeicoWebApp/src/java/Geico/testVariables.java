@@ -48,18 +48,12 @@ public class testVariables {
     public int calcAutoRate() {
         double rateAuto = 100;
         if (warning != null) {
-            System.out.print("\nAHHHHHH\n");
 
             rateAuto = 0;
-            System.out.printf("After Warning: %f%n", rateAuto);
         } else {
             rateAuto = precipitate(rateAuto);
 
-            System.out.printf("After precipitatie: %f%n", rateAuto);
-
             rateAuto = temperature(rateAuto);
-
-            System.out.printf("After temperature: %f%n", rateAuto);
 
             if (visibility <= 2) {
                 if (visibility == 0) {
@@ -68,20 +62,14 @@ public class testVariables {
                 rateAuto -= 50;
             }
 
-            System.out.printf("After visibility: %f%n", rateAuto);
-
             if (windSpeed > 25) {
                 rateAuto -= 2 * (windSpeed - 25);
             }
-
-            System.out.printf("After wind speed: %f%n", rateAuto);
         }
 
         if (rateAuto < 0) {
             rateAuto = 0;
         }
-
-        System.out.printf("Final value: %f%n%n", rateAuto);
 
         return (int) rateAuto;
     }
@@ -89,17 +77,11 @@ public class testVariables {
     public int calcBoatingRate() {
         double rateBoat = 100;
         if (warning != null) {
-            System.out.print("\nAHHHHHH\n");
             rateBoat = 0;
-            System.out.printf("After warnings: %f%n", rateBoat);
         } else {
             rateBoat = precipitate(rateBoat);
 
-            System.out.printf("After precipitation: %f%n", rateBoat);
-
             rateBoat = realFeelTemperature(rateBoat);
-
-            System.out.printf("After real feel temperature: %f%n", rateBoat);
 
             rateBoat = UV(rateBoat);
 
@@ -110,20 +92,14 @@ public class testVariables {
                 rateBoat -= 20;
             }
 
-            System.out.printf("After visibility: %f%n", rateBoat);
-
             if (windSpeed > 9) {
                 rateBoat -= (100 / 7) * (windSpeed - 9);
             }
-
-            System.out.printf("After wind speed: %f%n", rateBoat);
         }
 
         if (rateBoat < 0) {
             rateBoat = 0;
         }
-
-        System.out.printf("Final value: %f%n%n", rateBoat);
 
         return (int) rateBoat;
     }
@@ -132,36 +108,83 @@ public class testVariables {
         double fitnessRate = 100;
         
         if (warning != null) {
-            System.out.print("\nAHHHHHH\n");
             fitnessRate = 0;
-            System.out.printf("After warnings: %f%n", fitnessRate);
         } else {
             fitnessRate = precipitate(fitnessRate);
 
-            System.out.printf("After precipitation: %f%n", fitnessRate);
-
             fitnessRate = realFeelTemperature(fitnessRate);
 
-            System.out.printf("After real feel temperature: %f%n", fitnessRate);
-
             fitnessRate = UV(fitnessRate);
-
-            System.out.printf("After visibility: %f%n", fitnessRate);
 
             if (windSpeed > 24) {
                 fitnessRate -= (100 / 14) * (windSpeed - 24);
             }
-
-            System.out.printf("After wind speed: %f%n", fitnessRate);
         }
 
         if (fitnessRate < 0) {
             fitnessRate = 0;
         }
-
-        System.out.printf("Final value: %f%n%n", fitnessRate);
-
+        
         return (int) fitnessRate;
+    }
+    
+    public int calcMotercycleRate(){
+        double motercycleRate = 100;
+        
+        if (warning != null) {
+            System.out.print("\nAHHHHHH\n");
+            motercycleRate = 0;
+            System.out.printf("After warnings: %f%n", motercycleRate);
+        } else {
+            motercycleRate = precipitate(motercycleRate);
+            
+            motercycleRate = UV(motercycleRate);
+            
+            if(windSpeed > 24){
+                motercycleRate -= (100/14) * (windSpeed - 24);
+            }
+            
+            if (visibility <= 2) {
+                if (visibility == 0) {
+                    motercycleRate -= 50;
+                }
+                motercycleRate -= 50;
+            }
+            
+            motercycleRate = realFeelTemperature(motercycleRate);
+        }
+        
+        if (motercycleRate < 0) {
+            motercycleRate = 0;
+        }
+        
+        return (int) motercycleRate;
+    }
+    
+    public int calcFlightRate(){
+        double flightRate = 0;
+        
+        if (warning != null) {
+            flightRate = 0;
+        } else {
+            
+            flightRate = precipitate(flightRate);
+            
+            flightRate = temperature(flightRate);
+            
+            if (visibility <= 2) {
+                if (visibility == 0) {
+                    flightRate -= 50;
+                }
+                flightRate -= 50;
+            }
+        }
+        
+        if (flightRate < 0) {
+            flightRate = 0;
+        }
+        
+        return (int) flightRate;
     }
 
     public double precipitate(double rate) {
@@ -184,7 +207,7 @@ public class testVariables {
 
     public double temperature(double rate) {
         if (temperature < 32) {
-            rate -= Math.abs(32 - temperature);
+            rate -= 32 - temperature;
         }
         return rate;
     }
