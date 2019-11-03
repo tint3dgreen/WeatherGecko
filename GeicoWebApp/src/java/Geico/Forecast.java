@@ -41,7 +41,7 @@ public class Forecast {
         this.visibility = visibility;
     }
     
-        public String getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
