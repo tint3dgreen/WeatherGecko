@@ -31,7 +31,8 @@ public class main {
                                         jsonObject.getJSONObject("WindGust").getJSONObject("Speed").getInt("Value"),
                                         jsonObject.getJSONObject("Rain").getInt("Value"),
                                         jsonObject.getJSONObject("Snow").getInt("Value"),
-                                        jsonObject.getJSONObject("Ice").getInt("Value"));
+                                        jsonObject.getJSONObject("Ice").getInt("Value"),
+                                        jsonObject.getJSONObject("Visibility").getDouble("Value"));
         }catch (JSONException err){
             System.out.println(err);
          //commente dsad
