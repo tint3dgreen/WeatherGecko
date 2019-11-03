@@ -15,6 +15,7 @@ public class main {
         test = test.substring(1,test.length()-1);
         System.out.println(test);
         Location L1 = new Location("16801");
+        WeatherAlert A1 = new WeatherAlert("16801");
         try {
             JSONObject jsonObject = new JSONObject(test);
 //            System.out.println(jsonObject);
