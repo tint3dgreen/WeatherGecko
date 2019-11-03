@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+    <h:head> 
+        <link rel="stylesheet" type="text/css" href="CSS/index.css"></link>
+        <style type="text/css">
+            #primary-header {
+            position: fixed;
+            z-index: 25;
+            width: 100%;
+            top: 0;
+            left: 0;
+            min-width: 30rem;
+            height: 5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            background-image: linear-gradient(to right, #194b93 0%, #215bb0 100%);
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+            }
+            .centerblock {
+            width: 15%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: .7rem;  
+            }
+            .centerGecko{
+            width: 20%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: .7rem;
+            margin-top: 12px;
+            }
+            .leftGecko{
+            width: 20%;
+            display: block;
+            margin-left: 19%;
+            margin-right: auto;
+            margin-bottom: 0rem;
+            }
+            
+            .buttonprimary{
+            font-size: large; 
+            font-family: 'Lato', sans-serif;
+            background-color: #3773ca;
+            color: #fff;
+            width: 15%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            }
+            .head{
+            font-size: 150%;   
+            display: block;
+            font-family: 'Lato', sans-serif;
+            }
+        </style>
+        <title>Weather Gecko Homepage</title>
+    </h:head>
+    <h:body id="b1">
+        <header id="primary-header"><h1 align="center">WEATHER GECKO</h1> </header>
+        <br/> <br/> <br/> <br/>
+        <h1 align="center" class="head">Enter in your ZIP Code to get Weather Scores</h1>
+        <br/> <br/>
+        <h:form>
+                    <h:inputText required="true" requiredMessage="Please enter a zip code" styleClass="centerblock" value="#{geckoBean.zipCode}" validatorMessage="Invalid phone number format">
+                    <f:validateRegex pattern="\d{5}"/>
+         
+                    </h:inputText>
+        <h:commandButton styleClass="buttonprimary" value="Find Weather" action="#{geckoBean.apiPull()}" ></h:commandButton>
+        </h:form>
+        <h:graphicImage styleClass="leftGecko" value="C:\Users\carsc\Documents\NetBeansProjects\GeicoWebApp2\web\Rescources\Images\gecko.png" ></h:graphicImage>   
+    </h:body>
+</html>

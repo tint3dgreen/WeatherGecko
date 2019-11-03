@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+    <f:metadata>
+        <f:viewParam name="foo" value="#{bean.foo}"/>
+        <f:viewAction action="#{geckoBean.apiPull()}"></f:viewAction>
+    </f:metadata>
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="CSS/index.css"></link>
+        <style type="text/css">
+            #primary-header {
+            position: fixed;
+            z-index: 25;
+            width: 100%;
+            top: 0;
+            left: 0;
+            min-width: 30rem;
+            height: 5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            background-image: linear-gradient(to right, #194b93 0%, #215bb0 100%);
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+            }
+            .centerblock {
+            font-size: large; 
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+            }
+            .centertext{
+            font-size: large; 
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+            }
+            .head{
+            font-size: 200%;   
+            display: block;
+            font-family: 'Lato', sans-serif;
+            }
+            .buttonprimary{
+            font-size: large; 
+            font-family: 'Lato', sans-serif;
+            background-color: #3773ca;
+            color: #fff;
+            width: 15%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            }
+        </style>
+        <title>Weather Breakdown</title>
+    </h:head>
+    <h:body>
+        <header id="primary-header"><h1 align="center">WEATHER GECKO</h1> </header>
+        <br/> <br/> <br/> <br/>
+        <h1 align="center" class="head">Conditions Breakdown</h1>
+        <br/>
+        <h:form>
+            <h:outputText styleClass="centerblock" value="Chance of Precipitation -------------- #{geckoBean.precipProb}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Precipitation Amount ----------------- #{geckoBean.rainAMT}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Precipitation Type --------------------- #{geckoBean.ptype}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Humidity ---------------------------------- #{geckoBean.humidity}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Temperature ---------------------------- #{geckoBean.tempValue}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Feels Like ---------------------------- #{geckoBean.tempFeelsLike}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Wind Speed ----------------------------- #{geckoBean.windGust}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="UV Index --------------------------------- #{geckoBean.UVIndex}"></h:outputText>
+            
+            <h:outputText styleClass="centerblock" value="Visibility ----------------------------------- #{geckoBean.visibility}"></h:outputText>
+            
+            <h:commandButton styleClass="buttonprimary" value="Back" action="Result" ></h:commandButton>
+        </h:form>
+    </h:body>
+</html>
