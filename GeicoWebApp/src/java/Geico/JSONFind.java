@@ -55,9 +55,9 @@ public class JSONFind {
         }
 
     } catch (MalformedURLException ex) {
-        System.out.println(ex);
+        Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, ex);
     } catch (IOException ex) {
-        System.out.println(ex);
+        Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, ex);
     } finally {
        if (c != null) {
           try {
