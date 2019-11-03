@@ -27,4 +27,8 @@ public class WeatherAlert {
         }
         
     }
+    
+    public boolean getAlert(){return this.Alert;}
+    
+    public void setAlert(boolean newAlert){this.Alert = newAlert;}
 }
