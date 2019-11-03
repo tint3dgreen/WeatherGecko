@@ -12,25 +12,29 @@ package Geico;
 public class Forecast {
     public String dateTime;
     public int epochTime;
-    public int weatherIcon;
-    public String iconPhrase;
-    public boolean hasPrecipitation;
-    public boolean isDayLight;
-    public int tempValue;
-    public char unit;
-    public int unitType;
+    public double tempValue;
+    public String unit;
     public int precipProb;
+    public int humidity;
+    public int tempFeelsLike;
+    public int UVIndex;
+    public int windGust;
+    public int rainAMT;
+    public int snowAMT;
+    public int iceAMT;
     
-    public Forecast(String newDateTime, int newEpochTime, int newWeatherIcon, String newIconPhrase,boolean newHasPrecipitation,boolean newIsDayLight, int newTempValue,char newUnit,int newUnitType, int newPrecipProb){
+    public Forecast(String newDateTime, int newEpochTime, double newTempValue,String newUnit, int newPrecipProb,int newHumidity,int newTempFeelsLike,int newUVIndex,int newWindGust,int rain,int snow, int ice){
         this.dateTime = newDateTime;
         this.epochTime = newEpochTime;
-        this.weatherIcon = newWeatherIcon;
-        this.iconPhrase = newIconPhrase;
-        this.hasPrecipitation = newHasPrecipitation;
-        this.isDayLight = newIsDayLight;
         this.tempValue = newTempValue;
         this.unit = newUnit;
-        this.unitType = newUnitType;
         this.precipProb = newPrecipProb;
+        this.humidity = newHumidity;
+        this.tempFeelsLike = newTempFeelsLike;
+        this.UVIndex = newUVIndex;
+        this.windGust = newWindGust;
+        this.rainAMT = rain;
+        this.snowAMT = snow;
+        this.iceAMT = ice;
     }
 }
