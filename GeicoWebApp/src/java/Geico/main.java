@@ -1,4 +1,4 @@
-package hack.psu.mavenproject2;
+package Geico;
 
 
 /**
