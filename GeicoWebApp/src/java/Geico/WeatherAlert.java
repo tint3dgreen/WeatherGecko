@@ -12,7 +12,7 @@ import org.json.*;
 public class WeatherAlert {
     public boolean Alert;
     private final String AlertAPI = "http://dataservice.accuweather.com/alarms/v1/1day/";
-    private final String apiKey = "?Bm6lcTWBL5oy8MiDnw8G4hCZlHC9xFya";
+    private final String apiKey = "?apikey=Bm6lcTWBL5oy8MiDnw8G4hCZlHC9xFya";
     
     public WeatherAlert(String locationKey){
         String finalURL = AlertAPI + locationKey+apiKey;
