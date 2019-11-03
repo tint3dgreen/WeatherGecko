@@ -22,8 +22,9 @@ public class Forecast {
     public int rainAMT;
     public int snowAMT;
     public int iceAMT;
+    public double visibility;
     
-    public Forecast(String newDateTime, int newEpochTime, double newTempValue,String newUnit, int newPrecipProb,int newHumidity,int newTempFeelsLike,int newUVIndex,int newWindGust,int rain,int snow, int ice){
+    public Forecast(String newDateTime, int newEpochTime, double newTempValue,String newUnit, int newPrecipProb,int newHumidity,int newTempFeelsLike,int newUVIndex,int newWindGust,int rain,int snow, int ice, double visibility){
         this.dateTime = newDateTime;
         this.epochTime = newEpochTime;
         this.tempValue = newTempValue;
@@ -36,5 +37,6 @@ public class Forecast {
         this.rainAMT = rain;
         this.snowAMT = snow;
         this.iceAMT = ice;
+        this.visibility = visibility;
     }
 }
